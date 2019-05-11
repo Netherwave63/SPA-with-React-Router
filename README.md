@@ -1,4 +1,27 @@
+# Build a SPA with React Router
+
+This is a simple SPA webpage built with react-router.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+If you want to follow along the tutorial to build this, head over to the React & Redux Complete tutorial playlist on The Net Ninja YouTube channel.
+
+## Instructions
+
+First clone this repository.
+```bash
+$ git clone https://github.com/Netherwave63/todoApp.git
+```
+
+Install dependencies. Make sure you already have [`nodejs`](https://nodejs.org/en/) & [`npm`](https://www.npmjs.com/) installed in your system.
+```bash
+$ npm install # or yarn
+```
+
+Run it
+```bash
+$ npm start # or yarn start
+```
 
 ## Available Scripts
 
@@ -42,27 +65,3 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
