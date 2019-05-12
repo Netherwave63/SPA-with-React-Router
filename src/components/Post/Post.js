@@ -1,20 +1,15 @@
 import React from "react";
-import axios from "axios";
+import { connect } from "react-redux";
 
 class Post extends React.Component {
 
-  state = {
-    post: null
-  }
-
-  componentDidMount() {
-    console.log(this.props.match.params.id)
-    axios(`https://jsonplaceholder.typicode.com/posts/${this.props.match.params.id}`)
-      .then(response => this.setState({ post: response.data }));
+  handleClick = (id) => {
+    this.props.deletePost(id);
+    this.props.history.push("/");
   }
 
   render() {
-    const { post } = this.state;
+    const { post } = this.props;
     return (
       <section className="container">
         {
@@ -22,6 +17,14 @@ class Post extends React.Component {
             <React.Fragment>
               <h4 className="center">{ post.title }</h4>
               <p>{ post.body }</p>
+              <div className="center">
+                <button 
+                  className="btn grey" 
+                  onClick={() => this.handleClick(post.id)}
+                >
+                  Delete Post
+                </button>
+              </div>
             </React.Fragment>
           ) : (
             <h4 className="center">Loading...</h4>
@@ -33,4 +36,16 @@ class Post extends React.Component {
 
 };
 
-export default Post;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    post: state.posts.find(post => post.id === ownProps.match.params.id)
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    deletePost: (id) => dispatch({ type: "DELETE_POST", id })
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Post);
